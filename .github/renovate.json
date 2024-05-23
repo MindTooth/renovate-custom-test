@@ -1,0 +1,40 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "extends": [
+    "config:best-practices",
+    ":label(dependencies)",
+    ":timezone(Europe/Berlin)",
+    ":disableRateLimiting",
+    ":separateMultipleMajorReleases"
+  ],
+
+  "enabledManagers": ["custom.regex"],
+
+  "packageRules": [
+    {
+      "matchDatasources": ["custom.activemq"],
+      "extractVersion": "^(?<version>.+)/$"
+    }
+  ],
+
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["hiera.yaml"],
+      "matchStrings": [
+        "profile::activemq::install::version: \"(?<currentValue>.*)\""
+      ],
+      "depNameTemplate": "apache/activemq-artemis",
+      "versioningTemplate": "semver-coerced",
+      "datasourceTemplate": "custom.activemq"
+    }
+  ],
+
+  "customDatasources": {
+    "activemq": {
+      "defaultRegistryUrlTemplate": "https://archive.apache.org/dist/activemq/activemq-artemis/",
+      "format": "html"
+    }
+  }
+}
