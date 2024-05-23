@@ -25,7 +25,7 @@
       "matchStrings": [
         "profile::activemq::install::version: \"(?<currentValue>.*)\""
       ],
-      "depNameTemplate": "apache/activemq-artemis",
+      "depNameTemplate": "activemq",
       "versioningTemplate": "semver-coerced",
       "datasourceTemplate": "custom.activemq"
     }
