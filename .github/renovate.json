@@ -26,7 +26,6 @@
         "profile::activemq::install::version: \"(?<currentValue>.*)\""
       ],
       "depNameTemplate": "activemq",
-      "versioningTemplate": "semver-coerced",
       "datasourceTemplate": "custom.activemq"
     }
   ],
