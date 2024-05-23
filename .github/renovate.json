@@ -21,7 +21,7 @@
       "prBodyDefinitions": {
         "Package": "[{{{depName}}}](https://activemq.apache.org/components/artemis/)"
       },
-      "customChangelogUrl": "https://activemq.apache.org/components/artemis/documentation/latest/versions.html"
+      "customChangelogUrl": "https://github.com/apache/activemq-artemis"
     }
   ],
 
