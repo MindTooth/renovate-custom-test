@@ -17,8 +17,11 @@
       "extractVersion": "^(?<version>.+)/$"
     },
     {
-      "matchDatasources": ["custom.activemq2"],
-      "extractVersion": "^(?<version>.+)/$"
+      "matchDepNames": ["apache/activemq-artemis"],
+      "prBodyDefinitions": {
+        "Package": "[{{{depName}}}](https://activemq.apache.org/components/artemis/)"
+      },
+      "customChangelogUrl": "https://activemq.apache.org/components/artemis/documentation/latest/versions.html"
     }
   ],
 
@@ -30,16 +33,12 @@
         "profile::activemq::install::version: \"(?<currentValue>.+?)\""
       ],
       "depNameTemplate": "apache/activemq-artemis",
-      "datasourceTemplate": "custom.activemq2"
+      "datasourceTemplate": "custom.activemq"
     }
   ],
 
   "customDatasources": {
     "activemq": {
-      "defaultRegistryUrlTemplate": "https://archive.apache.org/dist/activemq/activemq-artemis/",
-      "format": "html"
-    },
-    "activemq2": {
       "defaultRegistryUrlTemplate": "https://downloads.apache.org/activemq/activemq-artemis/",
       "format": "html"
     }
