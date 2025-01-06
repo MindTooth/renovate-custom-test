@@ -14,7 +14,7 @@
   "packageRules": [
     {
       "matchDatasources": ["custom.activemq"],
-      "extractVersion": "^(?<version>.+)/$"
+      "extractVersion": "apache-artemis-(?<version>.+)-bin\.tar\.gz"
     },
     {
       "matchDepNames": ["apache/activemq-artemis"],
@@ -39,7 +39,7 @@
 
   "customDatasources": {
     "activemq": {
-      "defaultRegistryUrlTemplate": "https://archive.apache.org/dist/activemq/activemq-artemis/",
+      "defaultRegistryUrlTemplate": "https://activemq.apache.org/components/artemis/download/#verify-the-integrity-of-downloads",
       "format": "html"
     }
   }
