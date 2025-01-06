@@ -39,7 +39,7 @@
 
   "customDatasources": {
     "activemq": {
-      "defaultRegistryUrlTemplate": "https://downloads.apache.org/activemq/activemq-artemis/",
+      "defaultRegistryUrlTemplate": "https://archive.apache.org/dist/activemq/activemq-artemis/",
       "format": "html"
     }
   }
