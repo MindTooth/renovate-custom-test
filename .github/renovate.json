@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
   "extends": [
     "config:best-practices",
     ":label(dependencies)",
@@ -7,32 +8,27 @@
     ":disableRateLimiting",
     ":separateMultipleMajorReleases"
   ],
-  "enabledManagers": [
-    "custom.regex"
-  ],
+
+  "enabledManagers": ["custom.regex"],
+
   "packageRules": [
     {
-      "matchDatasources": [
-        "custom.activemq"
-      ],
+      "matchDatasources": ["custom.activemq"],
       "extractVersion": "apache-artemis-(?<version>.+)-bin.tar.gz"
     },
     {
-      "matchDepNames": [
-        "apache/activemq-artemis"
-      ],
+      "matchDepNames": ["apache/activemq-artemis"],
       "prBodyDefinitions": {
         "Package": "[{{{depName}}}](https://activemq.apache.org/components/artemis/)"
       },
       "changelogUrl": "https://github.com/apache/activemq-artemis"
     }
   ],
+
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "/hiera.yaml/"
-      ],
+      "managerFilePatterns": ["/hiera.yaml/"],
       "matchStrings": [
         "profile::activemq::install::version: \"(?<currentValue>.+?)\""
       ],
@@ -40,9 +36,10 @@
       "datasourceTemplate": "custom.activemq"
     }
   ],
+
   "customDatasources": {
     "activemq": {
-      "defaultRegistryUrlTemplate": "https://activemq.apache.org/components/artemis/download/#verify-the-integrity-of-downloads",
+      "defaultRegistryUrlTemplate": "https://activemq.apache.org/components/artemis/download/",
       "format": "html"
     }
   }
